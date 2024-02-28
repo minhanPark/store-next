@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import CartProvider from "./components/CartContext";
 import Header from "./components/Header";
-import CartProvider from "./providers/CartContext";
 
 import { getCart, clearCart } from "@/api/cart";
 
@@ -31,7 +31,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartProvider initialCart={cart}>
+        <CartProvider cart={cart}>
           <Header clearCartAction={clearCartAction} />
           <main className="mx-auto max-w-3xl">{children}</main>
         </CartProvider>

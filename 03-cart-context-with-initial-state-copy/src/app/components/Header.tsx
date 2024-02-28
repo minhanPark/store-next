@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { useCart } from "../store/store";
+import { useCart } from "./CartContext";
 import CartPopup from "./CartPopup";
 import { type Cart } from "@/api/types";
 
@@ -11,7 +11,7 @@ export default function Header({
 }: {
   clearCartAction: () => Promise<Cart>;
 }) {
-  const cart = useCart();
+  const [cart] = useCart();
   const [showCart, setShowCart] = useState(false);
 
   return (

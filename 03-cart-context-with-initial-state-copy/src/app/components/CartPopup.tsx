@@ -1,6 +1,6 @@
 "use client";
 import { type Cart } from "@/api/types";
-import { useCart } from "@/hooks/use-cart";
+import { useCart } from "./CartContext";
 
 export default function CartPopup({
   clearCartAction,
@@ -8,6 +8,7 @@ export default function CartPopup({
   clearCartAction: () => Promise<Cart>;
 }) {
   const [cart, setCart] = useCart();
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="flex flex-col items-center justify-center w-1/2 p-4 bg-white rounded-lg">

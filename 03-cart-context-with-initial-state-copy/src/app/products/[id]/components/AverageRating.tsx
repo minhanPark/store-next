@@ -1,9 +1,7 @@
 "use client";
 import { Review } from "@/api/types";
-import { useReviews } from "@/hooks/use-reviews";
 
-export default function AverageRating() {
-  const [reviews] = useReviews();
+export default function AverageRating({ reviews }: { reviews: Review[] }) {
   return (
     <>
       {reviews && reviews?.length && (
